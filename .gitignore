@@ -1,3 +1,4 @@
 .vs/BubbleSort/v16/.suo
 .vs/BubbleSort/v16/Server/sqlite3/storage.ide-shm
 .vs/BubbleSort/v16/Server/sqlite3/storage.ide-wal
+./BubbleSort/bin/*
