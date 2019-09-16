@@ -41,8 +41,6 @@ namespace BS
                 bool tryParse = false;
                 int parsedvalue;
                 Console.WriteLine("Aby wyjśc z programu wpisz \"exit\" ");
-
-
                 for (int i = 0; i < sizeParsed; i++)
                 {
                     Console.WriteLine("Wprowadź wartość do tablicy");
@@ -50,49 +48,27 @@ namespace BS
                     {
                         var output = Console.ReadLine();
                         tryParse = int.TryParse(output, out parsedvalue);
-
-
-
                         if (!tryParse)
                         {
                             Console.WriteLine("wprowadziłeś zły format!");
 
                         }
-
-
                     }
                     while (!tryParse);
 
                     tab.Add(parsedvalue);
-                }
-
-
-
+                }             
 
 
 
                 Console.WriteLine("tablica przed posortowaniem");
-
                 foreach (var item in tab)
                 {
 
                     Console.WriteLine(item);
                 }
 
-                for (int z = 0; z < tab.Count; z++)
-                {
-                    for (int t = 0; t < tab.Count - 1; t++)
-                    {
-                        if (tab[t] > tab[t + 1])
-                        {
-                            int tmp = tab[t];
-                            tab[t] = tab[t + 1];
-                            tab[t + 1] = tmp;
-
-                        }
-
-                    }
-                }
+                BubbleSort(tab);
                 Console.WriteLine("Tablica po posortowaniu");
                 for (int v = 0; v < tab.Count; v++)
                 {
@@ -110,6 +86,24 @@ namespace BS
             while (true);
 
         }
+
+        static List<int> BubbleSort(List<int> arr)
+        {
+            for (int z = 0; z < arr.Count; z++)
+            {
+                for (int t = 0; t < arr.Count - 1; t++)
+                {
+                    if (arr[t] > arr[t + 1])
+                    {
+                        int tmp = arr[t];
+                        arr[t] = arr[t + 1];
+                        arr[t + 1] = tmp;
+                    }
+
+                }
+            }
+            return arr;
+        }        
 
     }
 }
